@@ -23,18 +23,19 @@ func _ready():
 	ray_back.collision_mask = collision_mask
 	add_child(ray_back)
 	
-	collision_shape = CollisionShape2D.new()
-	var shape = RectangleShape2D.new()
-	shape.size = Vector2(tile_size *0.9, tile_size *0.9)
-	collision_shape.shape = shape
-	call_deferred("add_child",collision_shape)
+	if !has_node("CollisionShape2D"):
+		collision_shape = CollisionShape2D.new()
+		var shape = RectangleShape2D.new()
+		shape.size = Vector2(tile_size *0.9, tile_size *0.9)
+		collision_shape.shape = shape
+		call_deferred("add_child",collision_shape)
 
 func step():
 	if has_method("_step"):call("_step")
 	position = Vector2(grid_pos) * tile_size +tile_offset
 #	if sprite and direction:
 #		animate(sprite, direction)
-	var dir = direction
+	var _dir = direction
 	direction = Vector2()
 	return {self: grid_pos}
 
