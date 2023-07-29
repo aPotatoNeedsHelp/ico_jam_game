@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690591078
+::res://::1690610169
 this is a mess.txt::TextFile::-1::1690587649::0::1::::<><>::
 ::res://assats/::1690591078
 Bread_bottom.png::CompressedTexture2D::4914595316807869265::1690588314::1690591078::1::::<><>::
@@ -9,10 +9,11 @@ Meat_cooced.png::CompressedTexture2D::4710272093469051540::1690588314::169059107
 Meat_raw.png::CompressedTexture2D::1537794244010265319::1690588314::1690591078::1::::<><>::
 player.png::CompressedTexture2D::6427520185894298529::1690588314::1690591078::1::::<><>::
 tilesese.png::CompressedTexture2D::8389297594144983547::1690588314::1690591078::1::::<><>::
-::res://scenes/::1690591103
-hand.tscn::PackedScene::828246227338805477::1690591091::0::1::::<><>::res://scripts/player.gd<>uid://cxtsk3b78ss8x::::res://assats/player.png
-main_scene.tscn::PackedScene::602878373320526730::1690590938::0::1::::<><>::
-::res://scenes/Puzzle/::1690591103
-::res://scripts/::1690590899
-GridBody2D.gd::GDScript::-1::1690590899::0::1::::GridBody2D<>CharacterBody2D<>::
-player.gd::GDScript::-1::1690590790::0::1::::<>GridBody2D<>::
+::res://scenes/::1690591952
+hand.tscn::PackedScene::828246227338805477::1690591719::0::1::::<><>::res://scripts/player.gd<>uid://cxtsk3b78ss8x::::res://assats/player.png
+main_scene.tscn::PackedScene::602878373320526730::1690591952::0::1::::<><>::uid://l2hdhctkbrer::::res://scenes/hand.tscn
+::res://scenes/puzzle/::1690591103
+::res://scripts/::1690591930
+Global.gd::GDScript::-1::1690591930::0::1::::<>Node<>::
+GridBody2D.gd::GDScript::-1::1690591719::0::1::::GridBody2D<>CharacterBody2D<>::
+player.gd::GDScript::-1::1690591518::0::1::::<>GridBody2D<>::

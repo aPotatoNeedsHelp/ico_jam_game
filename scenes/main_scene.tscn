@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://iubk3pikny4i"]
+[gd_scene load_steps=4 format=3 uid="uid://iubk3pikny4i"]
 
 [ext_resource type="PackedScene" uid="uid://l2hdhctkbrer" path="res://scenes/hand.tscn" id="1_r78lw"]
+[ext_resource type="PackedScene" uid="uid://bhudf7y3a6erv" path="res://scenes/food.tscn" id="2_qp1jp"]
+[ext_resource type="PackedScene" uid="uid://clw07x86mswh7" path="res://scenes/fire.tscn" id="3_2fl61"]
 
 [node name="MainScene" type="Node2D"]
 
 [node name="hand" parent="." instance=ExtResource("1_r78lw")]
 position = Vector2(622, 262)
+
+[node name="food" parent="." instance=ExtResource("2_qp1jp")]
+position = Vector2(337, 366)
+
+[node name="fire" parent="." instance=ExtResource("3_2fl61")]
+position = Vector2(909, 392)

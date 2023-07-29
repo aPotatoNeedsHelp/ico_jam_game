@@ -6,7 +6,8 @@ var grid_pos: Vector2i
 #@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var ray_front
 var ray_back
-var is_pull: bool = false
+var collision_shape
+@export var is_pull: bool = false
 
 var directions = {"right": Vector2.RIGHT,
 			"left": Vector2.LEFT,
@@ -21,6 +22,12 @@ func _ready():
 	add_child(ray_front)
 	ray_back = RayCast2D.new()
 	add_child(ray_back)
+	
+	collision_shape = CollisionShape2D.new()
+	var shape = RectangleShape2D.new()
+	shape.size = Vector2(tile_size *0.9, tile_size *0.9)
+	collision_shape.shape = shape
+	add_child(collision_shape)
 
 func get_rotation_to(dir):
 	return directions[dir].angle() + PI/2
