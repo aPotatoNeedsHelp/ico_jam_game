@@ -8,13 +8,13 @@ size = Vector2(115.2, 115.2)
 
 [node name="fire" type="Area2D" groups=["Fire"]]
 script = ExtResource("1_a1nib")
+direction = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tk5ae")
 
-[node name="Fire" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, 6)
-rotation = -1.5708
 texture = ExtResource("2_no1he")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

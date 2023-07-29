@@ -15,3 +15,4 @@ func burn(dir: Vector2):
 	burned_food.move(dir)
 	get_parent().step()
 	queue_free()
+
