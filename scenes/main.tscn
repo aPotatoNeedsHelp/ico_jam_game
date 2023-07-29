@@ -17,7 +17,7 @@ offset_left = 687.0
 offset_top = 742.0
 offset_right = 1407.0
 offset_bottom = 1120.0
-flat = true
+text = "seeing game"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 1453.0
