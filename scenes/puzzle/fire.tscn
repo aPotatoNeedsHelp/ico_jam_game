@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://clw07x86mswh7"]
 
-[ext_resource type="Script" path="res://scripts/fire.gd" id="1_e72lh"]
-[ext_resource type="Texture2D" uid="uid://mhtbpadqgqit" path="res://assats/Fire.png" id="1_p2tvu"]
+[ext_resource type="Script" path="res://scripts/fire.gd" id="1_hpg0v"]
+[ext_resource type="Texture2D" uid="uid://mhtbpadqgqit" path="res://assats/Fire.png" id="2_f8jqn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tk5ae"]
 size = Vector2(115.2, 115.2)
 
 [node name="fire" type="Area2D" groups=["Fire"]]
-script = ExtResource("1_e72lh")
+script = ExtResource("1_hpg0v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tk5ae")
 
 [node name="Fire" type="Sprite2D" parent="."]
 position = Vector2(0, 6)
-texture = ExtResource("1_p2tvu")
+texture = ExtResource("2_f8jqn")

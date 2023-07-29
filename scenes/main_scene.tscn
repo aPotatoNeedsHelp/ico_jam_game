@@ -1,16 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://iubk3pikny4i"]
+[gd_scene load_steps=5 format=3 uid="uid://iubk3pikny4i"]
 
-[ext_resource type="PackedScene" uid="uid://l2hdhctkbrer" path="res://scenes/hand.tscn" id="1_r78lw"]
-[ext_resource type="PackedScene" uid="uid://bhudf7y3a6erv" path="res://scenes/food.tscn" id="2_qp1jp"]
-[ext_resource type="PackedScene" uid="uid://clw07x86mswh7" path="res://scenes/fire.tscn" id="3_2fl61"]
+[ext_resource type="Texture2D" uid="uid://drr3rgtnselff" path="res://assats/tilesese.png" id="1_4ckp6"]
+[ext_resource type="Script" path="res://scripts/level_map.gd" id="4_74f5m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqdqi"]
+texture = ExtResource("1_4ckp6")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/custom_data_0 = "food"
+1:0/0 = 0
+1:0/0/custom_data_0 = "food"
+2:0/0 = 0
+2:0/0/custom_data_0 = "fire"
+3:0/0 = 0
+3:0/0/custom_data_0 = "food"
+4:0/0 = 0
+4:0/0/custom_data_0 = "food"
+5:0/0 = 0
+5:0/0/custom_data_0 = "hand"
+
+[sub_resource type="TileSet" id="TileSet_6b1t4"]
+tile_size = Vector2i(128, 128)
+custom_data_layer_0/name = "scene_name"
+custom_data_layer_0/type = 4
+sources/2 = SubResource("TileSetAtlasSource_qqdqi")
+tile_proxies/coords_level = [[0, Vector2i(0, 0)], [2, Vector2i(0, 0)], [0, Vector2i(1, 0)], [2, Vector2i(1, 0)], [0, Vector2i(2, 0)], [2, Vector2i(2, 0)], [0, Vector2i(3, 0)], [2, Vector2i(3, 0)], [0, Vector2i(4, 0)], [2, Vector2i(4, 0)], [1, Vector2i(0, 0)], [2, Vector2i(5, 0)]]
 
 [node name="MainScene" type="Node2D"]
 
-[node name="hand" parent="." instance=ExtResource("1_r78lw")]
-position = Vector2(622, 262)
-
-[node name="food" parent="." instance=ExtResource("2_qp1jp")]
-position = Vector2(337, 366)
-
-[node name="fire" parent="." instance=ExtResource("3_2fl61")]
-position = Vector2(909, 392)
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_6b1t4")
+format = 2
+layer_0/tile_data = PackedInt32Array(131074, 2, 0, 2, 65538, 0, 65543, 327682, 0, 65540, 262146, 0, 196613, 131074, 0)
+script = ExtResource("4_74f5m")
