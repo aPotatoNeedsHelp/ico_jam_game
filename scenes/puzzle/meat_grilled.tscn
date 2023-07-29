@@ -8,3 +8,4 @@ script = ExtResource("1_cs5vc")
 
 [node name="BreadTop" type="Sprite2D" parent="."]
 texture = ExtResource("2_e57xy")
+offset = Vector2(0, -14)

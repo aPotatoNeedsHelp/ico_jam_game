@@ -5,7 +5,9 @@
 
 [node name="food" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_v4dj0")
+burned_food_preload = "res://scenes/puzzle/bread_bottom.tscn"
 sprite = NodePath("BreadTop")
 
 [node name="BreadTop" type="Sprite2D" parent="."]
 texture = ExtResource("2_qoih0")
+offset = Vector2(0, -27)

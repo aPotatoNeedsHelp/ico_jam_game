@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://assats/player.png" id="2_vw36s"]
 
 [node name="hand" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+collision_layer = 2
 script = ExtResource("1_wph3m")
 sprite = NodePath("Player")
 
 [node name="Player" type="Sprite2D" parent="."]
 texture = ExtResource("2_vw36s")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

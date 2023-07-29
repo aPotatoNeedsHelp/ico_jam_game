@@ -12,7 +12,10 @@ func _ready() -> void:
 
 var active_body
 func step():
-	print("\nstep:")
+	var step_list: Array[Dictionary]
 	for child in get_children():
 		if child.has_method("step"):
-			await child.step()
+			step_list.append(await child.step())
+	Global.add_step(step_list)
+	print("\nstep: ", step_list)
+	

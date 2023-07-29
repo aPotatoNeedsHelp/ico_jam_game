@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690620004
+::res://::1690622698
+this is a mess.txt::TextFile::-1::1690620077::0::1::::<><>::
 ::res://assats/::1690620004
 Bread_bottom.png::CompressedTexture2D::4914595316807869265::1690588314::1690620004::1::::<><>::
 Bread_top.png::CompressedTexture2D::6700805845169331960::1690588314::1690620004::1::::<><>::
@@ -8,20 +9,19 @@ Meat_cooced.png::CompressedTexture2D::4710272093469051540::1690588314::169062000
 Meat_raw.png::CompressedTexture2D::1537794244010265319::1690588314::1690620004::1::::<><>::
 player.png::CompressedTexture2D::6427520185894298529::1690588314::1690620004::1::::<><>::
 tilesese.png::CompressedTexture2D::8389297594144983547::1690620004::1690620004::1::::<><>::
-::res://scenes/::1690620022
-main_scene.tscn::PackedScene::602878373320526730::1690620022::0::1::::<><>::uid://drr3rgtnselff::::res://assats/tilesese.png<>res://scripts/level_map.gd
-::res://scenes/puzzle/::1690620022
-bread_bottom.tscn::PackedScene::4864075946332352778::1690618022::0::1::::<><>::res://scripts/food.gd<>uid://ccawww4ltp2mf::::res://assats/Bread_bottom.png
-bread_top.tscn::PackedScene::2919222943284273247::1690618029::0::1::::<><>::res://scripts/food.gd<>uid://c2p6j8axgwb5i::::res://assats/Bread_top.png
-fire.tscn::PackedScene::5591911288658858070::1690620022::0::1::::<><>::res://scripts/fire.gd<>uid://mhtbpadqgqit::::res://assats/Fire.png
-hand.tscn::PackedScene::828246227338805477::1690617993::0::1::::<><>::res://scripts/player.gd<>uid://cxtsk3b78ss8x::::res://assats/player.png
-meat_grilled.tscn::PackedScene::5668542816012837256::1690620022::0::1::::<><>::res://scripts/food.gd<>uid://b8dxq1e0aj5bs::::res://assats/Meat_cooced.png
-meat_raw.tscn::PackedScene::8201200447444412905::1690620022::0::1::::<><>::res://scripts/food.gd<>uid://cm05cphx4hs2c::::res://scenes/puzzle/meat_grilled.tscn<>uid://v56im8nkasip::::res://assats/Meat_raw.png
-::res://scripts/::1690620004
+::res://scenes/::1690622183
+main_scene.tscn::PackedScene::602878373320526730::1690622183::0::1::::<><>::uid://drr3rgtnselff::::res://assats/tilesese.png<>res://scripts/level_map.gd
+::res://scenes/puzzle/::1690622184
+bread_bottom.tscn::PackedScene::4864075946332352778::1690620004::0::1::::<><>::res://scripts/food.gd<>uid://ccawww4ltp2mf::::res://assats/Bread_bottom.png
+bread_top.tscn::PackedScene::2919222943284273247::1690620004::0::1::::<><>::res://scripts/food.gd<>uid://c2p6j8axgwb5i::::res://assats/Bread_top.png
+fire.tscn::PackedScene::5591911288658858070::1690622183::0::1::::<><>::res://scripts/fire.gd<>uid://mhtbpadqgqit::::res://assats/Fire.png
+hand.tscn::PackedScene::828246227338805477::1690620004::0::1::::<><>::res://scripts/player.gd<>uid://cxtsk3b78ss8x::::res://assats/player.png
+meat_grilled.tscn::PackedScene::5668542816012837256::1690622184::0::1::::<><>::res://scripts/food.gd<>uid://b8dxq1e0aj5bs::::res://assats/Meat_cooced.png
+meat_raw.tscn::PackedScene::8201200447444412905::1690622184::0::1::::<><>::res://scripts/food.gd<>uid://cm05cphx4hs2c::::res://scenes/puzzle/meat_grilled.tscn<>uid://v56im8nkasip::::res://assats/Meat_raw.png
+::res://scripts/::1690622183
 fire.gd::GDScript::-1::1690620004::0::1::::<>Area2D<>::
-food.gd::GDScript::-1::1690620004::0::1::::Food<>GridBody2D<>::
+food.gd::GDScript::-1::1690621092::0::1::::Food<>GridBody2D<>::
 Global.gd::GDScript::-1::1690620004::0::1::::<>Node<>::
-GridBody2D.gd::GDScript::-1::1690620004::0::1::::GridBody2D<>CharacterBody2D<>::
-level_map.gd::GDScript::-1::1690620004::0::1::::<>TileMap<>::
-player.gd::GDScript::-1::1690620004::0::1::::<>GridBody2D<>::
-this is a mess.txt::TextFile::-1::1690620004::0::1::::<><>::
+GridBody2D.gd::GDScript::-1::1690621537::0::1::::GridBody2D<>CharacterBody2D<>::
+level_map.gd::GDScript::-1::1690622183::0::1::::<>TileMap<>::
+player.gd::GDScript::-1::1690622079::0::1::::<>GridBody2D<>::

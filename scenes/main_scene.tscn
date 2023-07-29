@@ -33,5 +33,5 @@ tile_proxies/coords_level = [[0, Vector2i(0, 0)], [2, Vector2i(0, 0)], [0, Vecto
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6b1t4")
 format = 2
-layer_0/tile_data = PackedInt32Array(262151, 327682, 0, 262154, 65538, 0, 262148, 131074, 0, 131081, 262146, 0, 131084, 2, 0)
+layer_0/tile_data = PackedInt32Array(262151, 327682, 0, 262154, 65538, 0, 262148, 131074, 0, 131081, 262146, 0, 262156, 65538, 0)
 script = ExtResource("4_74f5m")
