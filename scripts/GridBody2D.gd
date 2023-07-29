@@ -3,6 +3,7 @@ class_name GridBody2D
 
 var grid_pos: Vector2i
 @export var tile_size: int = 128
+@export var sprite: Node
 #@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var ray_front
 var ray_back
@@ -52,5 +53,7 @@ func move(dir) -> bool:
 			return false
 	
 	position += directions[dir] * tile_size
+	if sprite:
+		animate(sprite, dir)
 	return true
 

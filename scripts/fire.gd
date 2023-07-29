@@ -8,5 +8,8 @@ func _ready() -> void:
 	#grid_pos = position /tile_size
 	position -= Vector2.ONE * tile_size/2
 
-func _process(delta: float) -> void:
-	pass
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.has_method("burn"):
+		body.burn()
+	pass # Replace with function body.

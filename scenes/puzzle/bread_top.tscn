@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhudf7y3a6erv"]
+
+[ext_resource type="Script" path="res://scripts/food.gd" id="1_v4dj0"]
+[ext_resource type="Texture2D" uid="uid://c2p6j8axgwb5i" path="res://assats/Bread_top.png" id="2_qoih0"]
+
+[node name="food" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_v4dj0")
+sprite = NodePath("BreadTop")
+
+[node name="BreadTop" type="Sprite2D" parent="."]
+texture = ExtResource("2_qoih0")

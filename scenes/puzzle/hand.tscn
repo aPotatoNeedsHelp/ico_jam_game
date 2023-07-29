@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wph3m"]
 [ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://assats/player.png" id="2_vw36s"]
 
-[node name="hand" type="CharacterBody2D"]
+[node name="hand" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_wph3m")
+sprite = NodePath("Player")
 
 [node name="Player" type="Sprite2D" parent="."]
 texture = ExtResource("2_vw36s")

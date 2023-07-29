@@ -1,1 +1,0 @@
-extends GridBody2D
