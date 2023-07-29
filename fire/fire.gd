@@ -18,7 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 var burn_of_counter: int
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(_body: Node2D) -> void:
 	burn_of_counter += 1
 	if burn_of_counter >= 2:
 		burn_of_counter = 0

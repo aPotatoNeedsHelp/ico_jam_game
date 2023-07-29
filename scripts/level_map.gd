@@ -11,11 +11,13 @@ func _ready() -> void:
 		set_cell(0, cell)
 
 var active_body
+
 func step():
-	var step_list: Array[Dictionary]
+	var step_list: Array[Dictionary] = []
 	for child in get_children():
 		if child.has_method("step"):
 			step_list.append(await child.step())
+	
 	Global.add_step(step_list)
 	print("\nstep: ", step_list)
 	

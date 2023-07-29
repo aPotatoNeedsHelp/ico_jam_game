@@ -27,7 +27,7 @@ func _ready():
 	var shape = RectangleShape2D.new()
 	shape.size = Vector2(tile_size *0.9, tile_size *0.9)
 	collision_shape.shape = shape
-	add_child(collision_shape)
+	call_deferred("add_child",collision_shape)
 
 func step():
 	if has_method("_step"):call("_step")
