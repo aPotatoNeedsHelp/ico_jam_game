@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8dxq1e0aj5bs"
-path="res://.godot/imported/Meat_cooced.png-8068e52fc7a37298e482c6f0f5bba804.ctex"
+uid="uid://ccawww4ltp2mf"
+path="res://.godot/imported/Bread_bottom.png-747787dcd5bf30290c95020805bf2389.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/Meat_cooced.png"
-dest_files=["res://.godot/imported/Meat_cooced.png-8068e52fc7a37298e482c6f0f5bba804.ctex"]
+source_file="res://bread_bottom/Bread_bottom.png"
+dest_files=["res://.godot/imported/Bread_bottom.png-747787dcd5bf30290c95020805bf2389.ctex"]
 
 [params]
 

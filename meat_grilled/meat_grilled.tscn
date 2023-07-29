@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://cm05cphx4hs2c"]
 
 [ext_resource type="Script" path="res://scripts/food.gd" id="1_cs5vc"]
-[ext_resource type="Texture2D" uid="uid://b8dxq1e0aj5bs" path="res://assats/Meat_cooced.png" id="2_e57xy"]
+[ext_resource type="Texture2D" uid="uid://b8dxq1e0aj5bs" path="res://meat_grilled/Meat_cooced.png" id="2_1sts2"]
 
 [node name="food" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_cs5vc")
-burned_food_preload = "res://scenes/puzzle/meat_grilled.tscn"
+burned_food_preload = "res://meat_grilled/meat_grilled.tscn"
 
 [node name="BreadTop" type="Sprite2D" parent="."]
-texture = ExtResource("2_e57xy")
+texture = ExtResource("2_1sts2")
 offset = Vector2(0, -14)

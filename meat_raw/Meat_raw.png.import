@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2p6j8axgwb5i"
-path="res://.godot/imported/Bread_top.png-456dceafab3777f35bc9c866d9f7e15b.ctex"
+uid="uid://v56im8nkasip"
+path="res://.godot/imported/Meat_raw.png-a8d2b0f6d7559c57443486c44e7cea56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/Bread_top.png"
-dest_files=["res://.godot/imported/Bread_top.png-456dceafab3777f35bc9c866d9f7e15b.ctex"]
+source_file="res://meat_raw/Meat_raw.png"
+dest_files=["res://.godot/imported/Meat_raw.png-a8d2b0f6d7559c57443486c44e7cea56.ctex"]
 
 [params]
 

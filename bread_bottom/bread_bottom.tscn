@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbkgvc61qo0fm"]
 
 [ext_resource type="Script" path="res://scripts/food.gd" id="1_6433t"]
-[ext_resource type="Texture2D" uid="uid://ccawww4ltp2mf" path="res://assats/Bread_bottom.png" id="2_dg8pc"]
+[ext_resource type="Texture2D" uid="uid://ccawww4ltp2mf" path="res://bread_bottom/Bread_bottom.png" id="2_tw3vm"]
 
 [node name="food" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 collision_mask = 3
 script = ExtResource("1_6433t")
-burned_food_preload = "res://scenes/puzzle/bread_top.tscn"
+burned_food_preload = "res://bread_top/bread_top.tscn"
 sprite = NodePath("BreadTop")
 
 [node name="BreadTop" type="Sprite2D" parent="."]
-texture = ExtResource("2_dg8pc")
+texture = ExtResource("2_tw3vm")
 offset = Vector2(0, 27)

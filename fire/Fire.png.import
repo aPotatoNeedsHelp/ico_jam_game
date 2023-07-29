@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxtsk3b78ss8x"
-path="res://.godot/imported/player.png-40e7a0633a7d3c72f2c746615b28d6f8.ctex"
+uid="uid://mhtbpadqgqit"
+path="res://.godot/imported/Fire.png-f07a73cf5c9609e55c01818664ce7114.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/player.png"
-dest_files=["res://.godot/imported/player.png-40e7a0633a7d3c72f2c746615b28d6f8.ctex"]
+source_file="res://fire/Fire.png"
+dest_files=["res://.godot/imported/Fire.png-f07a73cf5c9609e55c01818664ce7114.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mhtbpadqgqit"
-path="res://.godot/imported/Fire.png-0a16a52fb41df3a2459698eab2d2c477.ctex"
+uid="uid://c2p6j8axgwb5i"
+path="res://.godot/imported/Bread_top.png-26d9d05a630e99710fdefb9b74dccd79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assats/Fire.png"
-dest_files=["res://.godot/imported/Fire.png-0a16a52fb41df3a2459698eab2d2c477.ctex"]
+source_file="res://bread_top/Bread_top.png"
+dest_files=["res://.godot/imported/Bread_top.png-26d9d05a630e99710fdefb9b74dccd79.ctex"]
 
 [params]
 
