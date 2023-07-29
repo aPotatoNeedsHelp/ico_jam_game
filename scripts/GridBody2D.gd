@@ -7,7 +7,6 @@ var grid_pos: Vector2i
 var ray_front
 var ray_back
 var collision_shape
-@export var is_pull: bool = false
 
 var directions = {"right": Vector2.RIGHT,
 			"left": Vector2.LEFT,
@@ -32,6 +31,11 @@ func _ready():
 func get_rotation_to(dir):
 	return directions[dir].angle() + PI/2
 
+func animate(node, dir):
+	node.position -= directions[dir] * tile_size
+	var tween = create_tween()
+	tween.tween_property(node, "position", Vector2(), 0.1)
+
 func check_dir(ray, dir, inverse: bool = false) -> bool:
 	var direction = directions[dir]
 	if inverse: direction = -directions[dir]
@@ -40,14 +44,7 @@ func check_dir(ray, dir, inverse: bool = false) -> bool:
 	return ray.is_colliding()
 
 func move(dir) -> bool:
-	if check_dir(ray_front, dir) and !is_pull:
-		if ray_front.get_collider().is_in_group("Push"):
-			if !ray_front.get_collider().move(dir):
-				return false
-		else:
-			return false
-	
-	if check_dir(ray_back, dir, true) and is_pull:
+	if check_dir(ray_front, dir):
 		if ray_front.get_collider().is_in_group("Push"):
 			if !ray_front.get_collider().move(dir):
 				return false

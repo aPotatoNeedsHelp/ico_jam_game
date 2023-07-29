@@ -5,3 +5,4 @@ func _input(event: InputEvent) -> void:
 		if event.is_action_pressed(str("ui_", dir)):
 			move(dir)
 			$Player.rotation = get_rotation_to(dir)
+			animate($Player, dir)

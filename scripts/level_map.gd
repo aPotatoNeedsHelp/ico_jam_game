@@ -7,3 +7,5 @@ func _ready() -> void:
 		var scene = load(str("res://scenes/puzzle/", scene_name,".tscn")).instantiate()
 		scene.position = map_to_local(cell)
 		add_child(scene)
+		#clear cell
+		set_cell(0, cell)

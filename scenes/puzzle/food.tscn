@@ -5,6 +5,7 @@
 
 [node name="food" type="CharacterBody2D" groups=["Push"]]
 script = ExtResource("1_gvc17")
+is_pull = null
 
 [node name="BreadTop" type="Sprite2D" parent="."]
 texture = ExtResource("2_up642")
