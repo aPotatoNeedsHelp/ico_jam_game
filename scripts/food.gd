@@ -6,7 +6,7 @@ func _init() -> void:
 
 
 @export var burned_food_preload: PackedScene
-func burn():
+func burn(dir):
 	if !burned_food_preload: return
 	var burned_food = burned_food_preload.instantiate()
 	burned_food.global_position = global_position

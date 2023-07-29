@@ -9,3 +9,10 @@ func _ready() -> void:
 		add_child(scene)
 		#clear cell
 		set_cell(0, cell)
+
+var active_body
+func step():
+	print("\nstep:")
+	for child in get_children():
+		if child.has_method("step"):
+			await child.step()

@@ -29,6 +29,9 @@ func _ready():
 	collision_shape.shape = shape
 	add_child(collision_shape)
 
+func step():
+	print(name)
+
 func get_rotation_to(dir):
 	return directions[dir].angle() + PI/2
 

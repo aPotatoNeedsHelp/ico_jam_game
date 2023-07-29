@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/food.gd" id="1_cs5vc"]
 [ext_resource type="Texture2D" uid="uid://b8dxq1e0aj5bs" path="res://assats/Meat_cooced.png" id="2_e57xy"]
 
-[node name="food" type="CharacterBody2D"]
+[node name="food2" type="CharacterBody2D"]
 script = ExtResource("1_cs5vc")
 
 [node name="BreadTop" type="Sprite2D" parent="."]
