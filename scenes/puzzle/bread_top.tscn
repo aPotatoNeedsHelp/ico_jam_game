@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2p6j8axgwb5i" path="res://assats/Bread_top.png" id="2_qoih0"]
 
 [node name="food" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+collision_mask = 3
 script = ExtResource("1_v4dj0")
 burned_food_preload = "res://scenes/puzzle/bread_bottom.tscn"
 sprite = NodePath("BreadTop")

@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://iubk3pikny4i"]
 
-[ext_resource type="Texture2D" uid="uid://drr3rgtnselff" path="res://assats/tilesese.png" id="1_4ckp6"]
-[ext_resource type="Script" path="res://scripts/level_map.gd" id="4_74f5m"]
+[ext_resource type="Texture2D" uid="uid://drr3rgtnselff" path="res://assats/tilesese.png" id="1_pldid"]
+[ext_resource type="Script" path="res://scripts/level_map.gd" id="2_c6myr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqdqi"]
-texture = ExtResource("1_4ckp6")
+texture = ExtResource("1_pldid")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/custom_data_0 = "bread_bottom"
@@ -25,13 +25,13 @@ custom_data_layer_0/name = "scene_name"
 custom_data_layer_0/type = 4
 custom_data_layer_1/name = "refrence"
 custom_data_layer_1/type = 0
-sources/2 = SubResource("TileSetAtlasSource_qqdqi")
+sources/0 = SubResource("TileSetAtlasSource_qqdqi")
 tile_proxies/coords_level = [[0, Vector2i(0, 0)], [2, Vector2i(0, 0)], [0, Vector2i(1, 0)], [2, Vector2i(1, 0)], [0, Vector2i(2, 0)], [2, Vector2i(2, 0)], [0, Vector2i(3, 0)], [2, Vector2i(3, 0)], [0, Vector2i(4, 0)], [2, Vector2i(4, 0)], [1, Vector2i(0, 0)], [2, Vector2i(5, 0)]]
 
-[node name="MainScene" type="Node2D"]
+[node name="puzzle" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6b1t4")
 format = 2
-layer_0/tile_data = PackedInt32Array(262151, 327682, 0, 262154, 65538, 0, 262148, 131074, 0, 131081, 262146, 0, 262156, 65538, 0)
-script = ExtResource("4_74f5m")
+layer_0/tile_data = PackedInt32Array(262151, 327680, 0, 262156, 0, 0, 262155, 262144, 0, 262154, 0, 0, 262152, 131072, 0)
+script = ExtResource("2_c6myr")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_wph3m"]
 [ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://assats/player.png" id="2_vw36s"]
 
-[node name="hand" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
+[node name="hand" type="CharacterBody2D" node_paths=PackedStringArray("sprite") groups=["Push"]]
 collision_layer = 2
 script = ExtResource("1_wph3m")
 sprite = NodePath("Player")
