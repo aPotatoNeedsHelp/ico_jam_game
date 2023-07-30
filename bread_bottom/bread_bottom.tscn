@@ -6,6 +6,7 @@
 [node name="food" type="CharacterBody2D" node_paths=PackedStringArray("sprite")]
 collision_mask = 3
 script = ExtResource("1_6433t")
+type = "bread_bottom"
 burned_food_preload = "res://bread_top/bread_top.tscn"
 sprite = NodePath("BreadTop")
 

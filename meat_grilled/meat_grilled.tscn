@@ -6,6 +6,7 @@
 [node name="food" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_cs5vc")
+type = "meat_grilled"
 burned_food_preload = "res://meat_grilled/meat_grilled.tscn"
 
 [node name="BreadTop" type="Sprite2D" parent="."]
