@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drr3rgtnselff"
-path="res://.godot/imported/tilesese.png-c9c7350882d183790eb7e52f04e7f4e7.ctex"
+uid="uid://d34pnxki3r5gl"
+path="res://.godot/imported/placeholder.png-989b9e0f3863768202f84f8198f97fa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assats/tilesese.png"
-dest_files=["res://.godot/imported/tilesese.png-c9c7350882d183790eb7e52f04e7f4e7.ctex"]
+source_file="res://shop_things/counters/placeholder.png"
+dest_files=["res://.godot/imported/placeholder.png-989b9e0f3863768202f84f8198f97fa4.ctex"]
 
 [params]
 

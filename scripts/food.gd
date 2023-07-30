@@ -1,11 +1,12 @@
 extends GridBody2D
 class_name Food
 
+@export var burned_food_preload: String
+
 func _init() -> void:
 	add_to_group("Push", true)
 
 
-@export var burned_food_preload: String
 func burn(dir: Vector2):
 	if !burned_food_preload: return
 	print("burned")

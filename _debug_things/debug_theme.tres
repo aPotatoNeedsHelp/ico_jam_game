@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://byllmko217xk7"]
+
+[ext_resource type="FontFile" uid="uid://c6kf266jdd13b" path="res://UI/fonts/Helvetica.ttf" id="1_wppgy"]
+
+[resource]
+default_font = ExtResource("1_wppgy")
+default_font_size = 32
+RichTextLabel/colors/font_outline_color = Color(0.164706, 0.172549, 0.239216, 1)
+RichTextLabel/constants/outline_size = 5

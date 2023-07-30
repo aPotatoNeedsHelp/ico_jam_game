@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd3gb4vmfaidk"]
+
+[ext_resource type="FontFile" uid="uid://c6kf266jdd13b" path="res://UI/fonts/Helvetica.ttf" id="1_judpq"]
+[ext_resource type="Script" path="res://_debug_things/DebugMenu.gd" id="2_xd5vd"]
+
+[sub_resource type="Theme" id="Theme_vq4nq"]
+default_font = ExtResource("1_judpq")
+default_font_size = 32
+RichTextLabel/colors/font_outline_color = Color(0.164706, 0.172549, 0.239216, 1)
+RichTextLabel/constants/outline_size = 5
+
+[node name="DebugLayer" type="CanvasLayer"]
+layer = 100
+
+[node name="DebugMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vq4nq")
+script = ExtResource("2_xd5vd")
+
+[node name="FPSLabel" type="RichTextLabel" parent="DebugMenu"]
+layout_mode = 0
+offset_right = 212.0
+offset_bottom = 107.0
+text = "FPS:"
+
+[node name="FullscreenButton" type="Button" parent="DebugMenu"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 36.0
+offset_right = 181.0
+offset_bottom = 91.0
+text = " FullScreen "
+
+[connection signal="pressed" from="DebugMenu/FullscreenButton" to="DebugMenu" method="_on_fullscreen_button_pressed"]

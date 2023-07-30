@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://gge8fpogkpxq"]
+
+[ext_resource type="Texture2D" uid="uid://d34pnxki3r5gl" path="res://shop_things/counters/placeholder.png" id="1_ptfqs"]
+[ext_resource type="Theme" uid="uid://byllmko217xk7" path="res://_debug_things/debug_theme.tres" id="2_8d23l"]
+
+[node name="PuzzleAccess" type="Sprite2D"]
+position = Vector2(1536, 684)
+texture = ExtResource("1_ptfqs")
+
+[node name="PuzzleType" type="RichTextLabel" parent="."]
+offset_left = -109.0
+offset_top = -14.0
+offset_right = 174.0
+offset_bottom = 40.0
+theme = ExtResource("2_8d23l")
+theme_override_font_sizes/normal_font_size = 45
+text = "Prepation"

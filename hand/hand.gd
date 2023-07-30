@@ -1,6 +1,5 @@
 extends GridBody2D
 
-
 var directions = {
 		"right": Vector2.RIGHT,
 		"left": Vector2.LEFT,

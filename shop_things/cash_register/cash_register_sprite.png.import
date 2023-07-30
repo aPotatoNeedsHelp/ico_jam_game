@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drr3rgtnselff"
-path="res://.godot/imported/tilesese.png-c9c7350882d183790eb7e52f04e7f4e7.ctex"
+uid="uid://ljyrkq11rkxo"
+path="res://.godot/imported/cash_register_sprite.png-a2dc971666793976bdd1d79eaef7413b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assats/tilesese.png"
-dest_files=["res://.godot/imported/tilesese.png-c9c7350882d183790eb7e52f04e7f4e7.ctex"]
+source_file="res://shop_things/cash_register/cash_register_sprite.png"
+dest_files=["res://.godot/imported/cash_register_sprite.png-a2dc971666793976bdd1d79eaef7413b.ctex"]
 
 [params]
 

@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://cqdrvpn2k8nsi"]
+
+[ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://Assats/main_shop.png" id="1_4o1bu"]
+[ext_resource type="PackedScene" uid="uid://cd3gb4vmfaidk" path="res://_debug_things/debug_layer.tscn" id="1_bou51"]
+[ext_resource type="PackedScene" uid="uid://gge8fpogkpxq" path="res://shop_things/counters/puzzle_access.tscn" id="2_qydmv"]
+[ext_resource type="Texture2D" uid="uid://dn5w0ftckkp7b" path="res://shop_things/timer/timer_sprite.png" id="2_rhubm"]
+[ext_resource type="Script" path="res://shop_things/counters/Counters.gd" id="2_rof6h"]
+[ext_resource type="Texture2D" uid="uid://ljyrkq11rkxo" path="res://shop_things/cash_register/cash_register_sprite.png" id="3_4wres"]
+[ext_resource type="Texture2D" uid="uid://bcgqblco48nag" path="res://shop_things/customers/regular_guy.png" id="4_yx08n"]
+
+[node name="ShopScreen" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="MainInterface" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="TemporaryBackroundColor" type="ColorRect" parent="MainInterface"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.466667, 0.54902, 0.6, 1)
+metadata/_edit_lock_ = true
+
+[node name="MainShop" type="Sprite2D" parent="MainInterface"]
+texture = ExtResource("1_4o1bu")
+centered = false
+
+[node name="Counters" type="Node2D" parent="."]
+script = ExtResource("2_rof6h")
+
+[node name="PuzzleAccess" parent="Counters" instance=ExtResource("2_qydmv")]
+
+[node name="PuzzleAccess2" parent="Counters" instance=ExtResource("2_qydmv")]
+position = Vector2(466, 684)
+
+[node name="PuzzleAccess3" parent="Counters" instance=ExtResource("2_qydmv")]
+position = Vector2(986, 684)
+
+[node name="TimerInterface" type="Node2D" parent="."]
+
+[node name="TimerSprite" type="Sprite2D" parent="TimerInterface"]
+position = Vector2(1299, 135)
+texture = ExtResource("2_rhubm")
+
+[node name="MoneyInterface" type="Node2D" parent="."]
+
+[node name="CashRegisterSprite" type="Sprite2D" parent="MoneyInterface"]
+position = Vector2(549, 383)
+texture = ExtResource("3_4wres")
+
+[node name="GalaxyBackround" type="Node2D" parent="."]
+
+[node name="Customer" type="Node2D" parent="."]
+
+[node name="CustomerSprite" type="Sprite2D" parent="Customer"]
+position = Vector2(950, 409)
+texture = ExtResource("4_yx08n")
+
+[node name="DebugLayer" parent="." instance=ExtResource("1_bou51")]
