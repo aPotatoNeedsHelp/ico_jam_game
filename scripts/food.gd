@@ -1,10 +1,13 @@
-extends GridBody2D
+extends RigidBody2D
 class_name Food
 
 @export var burned_food_preload: String
 
 func _init() -> void:
 	add_to_group("Push", true)
+	gravity_scale = 0
+	linear_damp = 100
+	lock_rotation = true
 
 
 func burn(dir: Vector2):

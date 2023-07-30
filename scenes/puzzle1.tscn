@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cdy2eldle6nss"]
 
-[ext_resource type="Texture2D" uid="uid://drr3rgtnselff" path="res://Assats/tilesese.png" id="1_4arrq"]
+[ext_resource type="Texture2D" uid="uid://drr3rgtnselff" path="res://assats/tilesese.png" id="1_4arrq"]
 [ext_resource type="Script" path="res://scripts/level_map.gd" id="2_fwl3k"]
 [ext_resource type="Texture2D" uid="uid://dhlx835r0cqsi" path="res://puzzle/frame.png" id="3_4fql4"]
 
@@ -18,7 +18,7 @@ texture_region_size = Vector2i(128, 128)
 4:0/0 = 0
 4:0/0/custom_data_0 = "meat_raw"
 5:0/0 = 0
-5:0/0/custom_data_0 = "hand"
+5:0/0/custom_data_0 = "player"
 
 [sub_resource type="TileSet" id="TileSet_6b1t4"]
 tile_size = Vector2i(128, 128)
@@ -48,6 +48,7 @@ layer_1/tile_data = PackedInt32Array(-2, 327680, 0, -65535, 0, 0, -131072, 26214
 script = ExtResource("2_fwl3k")
 
 [node name="Frame" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_4fql4")
 
 [node name="BordersUp" type="StaticBody2D" parent="."]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://cqdrvpn2k8nsi"]
 
-[ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://Assats/main_shop.png" id="1_4o1bu"]
+[ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://assats/main_shop.png" id="1_4o1bu"]
 [ext_resource type="PackedScene" uid="uid://cd3gb4vmfaidk" path="res://_debug_things/debug_layer.tscn" id="1_bou51"]
 [ext_resource type="Script" path="res://scenes/PuzzleInterface.gd" id="1_wvdm2"]
 [ext_resource type="Shader" path="res://scenes/bg_blur_screen.gdshader" id="1_x3bgt"]
@@ -94,6 +94,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [0.0, 3.0]
 }
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_puzzle"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qbmxh"]
 _data = {
@@ -111,17 +125,17 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(0.5,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1m268"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vks50"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_chnsd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kn27l"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vk2wp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8co8"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
@@ -183,20 +197,20 @@ centered = false
 script = ExtResource("2_rof6h")
 
 [node name="PuzzleAccess1" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_1m268")
+material = SubResource("ShaderMaterial_vks50")
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Spices"
 
 [node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_chnsd")
+material = SubResource("ShaderMaterial_kn27l")
 position = Vector2(986, 684)
-puzzle_path = "res://scenes/puzzle2.tscn"
+puzzle_path = "res://scenes/puzzle1.tscn"
 title = "main"
 
 [node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_vk2wp")
+material = SubResource("ShaderMaterial_q8co8")
 position = Vector2(466, 684)
-puzzle_path = "res://scenes/puzzle3.tscn"
+puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Ingridience"
 
 [node name="TimerInterface" type="Node2D" parent="MainInterface"]

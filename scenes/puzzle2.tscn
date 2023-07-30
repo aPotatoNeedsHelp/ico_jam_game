@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://iubk3pikny4i"]
+[gd_scene load_steps=5 format=3 uid="uid://bp8xqfydlb83s"]
 
 [ext_resource type="Texture2D" uid="uid://drr3rgtnselff" path="res://assats/tilesese.png" id="1_pldid"]
 [ext_resource type="Script" path="res://scripts/level_map.gd" id="2_c6myr"]

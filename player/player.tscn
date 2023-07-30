@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://3yl4fno5m7bk"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_e3ici"]
+[ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://player/player.png" id="2_6p065"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gse1v"]
+size = Vector2(104, 107)
+
+[node name="hand" type="RigidBody2D" groups=["Push"]]
+collision_layer = 3
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_e3ici")
+
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("2_6p065")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_gse1v")

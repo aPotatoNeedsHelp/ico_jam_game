@@ -1,8 +1,8 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 const DELTA_MULTIPLIER = 40
-
-@export_range(0.0,128*2)var speed: float = 128*2
+var velocity: Vector2
+@export_range(0.0,128*2)var speed: float = 128*0.25
 var directions = {
 		"right": Vector2.RIGHT,
 		"left": Vector2.LEFT,
@@ -15,4 +15,5 @@ func _physics_process(delta: float) -> void:
 	if dir.x != 0 and dir.y != 0:
 		dir.y = 0
 	velocity = dir.normalized() * speed  * delta * DELTA_MULTIPLIER
-	move_and_slide()
+	
+	position += velocity
