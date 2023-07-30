@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://cqdrvpn2k8nsi"]
 
-[ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://assats/main_shop.png" id="1_4o1bu"]
+[ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://Assats/main_shop.png" id="1_4o1bu"]
 [ext_resource type="PackedScene" uid="uid://cd3gb4vmfaidk" path="res://_debug_things/debug_layer.tscn" id="1_bou51"]
 [ext_resource type="Script" path="res://scenes/PuzzleInterface.gd" id="1_wvdm2"]
 [ext_resource type="Shader" path="res://scenes/bg_blur_screen.gdshader" id="1_x3bgt"]
@@ -16,45 +16,6 @@
 shader = ExtResource("1_x3bgt")
 shader_parameter/lod = 0.0
 shader_parameter/new_color = Color(1, 1, 1, 1)
-
-[sub_resource type="Animation" id="Animation_7706q"]
-resource_name = "fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Frame:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.6),
-"transitions": PackedFloat32Array(1, 1, 2),
-"update": 0,
-"values": [Vector2(2721, 511.455), Vector2(900, 511.455), Vector2(960, 511.455)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("back_grund_blur:material:shader_parameter/new_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0.6, 0.6, 0.6, 1)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("back_grund_blur:material:shader_parameter/lod")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 3.0]
-}
 
 [sub_resource type="Animation" id="Animation_nrus0"]
 length = 0.001
@@ -95,6 +56,45 @@ tracks/2/keys = {
 "values": [0.0]
 }
 
+[sub_resource type="Animation" id="Animation_7706q"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 2),
+"update": 0,
+"values": [Vector2(2721, 511.455), Vector2(900, 511.455), Vector2(960, 511.455)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("back_grund_blur:material:shader_parameter/new_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.6, 0.6, 0.6, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("back_grund_blur:material:shader_parameter/lod")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qbmxh"]
 _data = {
 "RESET": SubResource("Animation_nrus0"),
@@ -111,17 +111,17 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(0.5,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7d2u"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1m268"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_clm4f"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_chnsd"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ixrb8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vk2wp"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
@@ -183,18 +183,18 @@ centered = false
 script = ExtResource("2_rof6h")
 
 [node name="PuzzleAccess1" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_n7d2u")
+material = SubResource("ShaderMaterial_1m268")
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Spices"
 
 [node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_clm4f")
+material = SubResource("ShaderMaterial_chnsd")
 position = Vector2(986, 684)
 puzzle_path = "res://scenes/puzzle2.tscn"
 title = "main"
 
 [node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_ixrb8")
+material = SubResource("ShaderMaterial_vk2wp")
 position = Vector2(466, 684)
 puzzle_path = "res://scenes/puzzle3.tscn"
 title = "Ingridience"

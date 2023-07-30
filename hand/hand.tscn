@@ -1,13 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://3yl4fno5m7bk"]
+[gd_scene load_steps=4 format=3 uid="uid://3yl4fno5m7bk"]
 
 [ext_resource type="Script" path="res://hand/hand.gd" id="1_dulgx"]
 [ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://hand/player.png" id="2_6ouq7"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hqkao"]
+radius = 53.0
+height = 126.0
+
 [node name="hand" type="CharacterBody2D" groups=["Push"]]
 collision_layer = 2
 script = ExtResource("1_dulgx")
+speed = 1000.0
 
 [node name="Player" type="Sprite2D" parent="."]
 texture = ExtResource("2_6ouq7")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_hqkao")
