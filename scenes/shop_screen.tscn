@@ -1,12 +1,105 @@
-[gd_scene load_steps=12 format=3 uid="uid://cqdrvpn2k8nsi"]
+[gd_scene load_steps=21 format=3 uid="uid://cqdrvpn2k8nsi"]
 
 [ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://assats/main_shop.png" id="1_4o1bu"]
 [ext_resource type="PackedScene" uid="uid://cd3gb4vmfaidk" path="res://_debug_things/debug_layer.tscn" id="1_bou51"]
+[ext_resource type="Script" path="res://scenes/PuzzleInterface.gd" id="1_wvdm2"]
+[ext_resource type="Shader" path="res://scenes/bg_blur_screen.gdshader" id="1_x3bgt"]
+[ext_resource type="Texture2D" uid="uid://dhlx835r0cqsi" path="res://puzzle/frame.png" id="2_7gqnj"]
 [ext_resource type="PackedScene" uid="uid://gge8fpogkpxq" path="res://shop_things/counters/puzzle_access.tscn" id="2_qydmv"]
 [ext_resource type="Texture2D" uid="uid://dn5w0ftckkp7b" path="res://shop_things/timer/timer_sprite.png" id="2_rhubm"]
 [ext_resource type="Script" path="res://shop_things/counters/Counters.gd" id="2_rof6h"]
 [ext_resource type="Texture2D" uid="uid://ljyrkq11rkxo" path="res://shop_things/cash_register/cash_register_sprite.png" id="3_4wres"]
 [ext_resource type="Texture2D" uid="uid://bcgqblco48nag" path="res://shop_things/customers/regular_guy.png" id="4_yx08n"]
+[ext_resource type="FontFile" uid="uid://bvxi22t7n53yw" path="res://UI/fonts/GloriaHallelujah.ttf" id="6_qe061"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tv5vo"]
+shader = ExtResource("1_x3bgt")
+shader_parameter/lod = 0.0
+shader_parameter/new_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_7706q"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 2),
+"update": 0,
+"values": [Vector2(2721, 511.455), Vector2(900, 511.455), Vector2(960, 511.455)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("back_grund_blur:material:shader_parameter/new_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.6, 0.6, 0.6, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("back_grund_blur:material:shader_parameter/lod")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 3.0]
+}
+
+[sub_resource type="Animation" id="Animation_nrus0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Frame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2721, 511.455)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("back_grund_blur:material:shader_parameter/new_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("back_grund_blur:material:shader_parameter/lod")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbmxh"]
+_data = {
+"RESET": SubResource("Animation_nrus0"),
+"fade_in": SubResource("Animation_7706q")
+}
 
 [sub_resource type="Shader" id="Shader_wgrjo"]
 code = "shader_type canvas_item;
@@ -18,25 +111,60 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(0.5,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e027i"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vt1uv"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7wl4a"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dr4up"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dsbfb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cdux7"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_6nvvk"]
+font = ExtResource("6_qe061")
+font_size = 36
+font_color = Color(0.215686, 0.227451, 0.266667, 1)
 
 [node name="ShopScreen" type="Node2D"]
 metadata/_edit_lock_ = true
 
 [node name="PuzzleInterface" type="Node2D" parent="."]
+z_index = 10
+script = ExtResource("1_wvdm2")
+
+[node name="Frame" type="Node2D" parent="PuzzleInterface"]
+position = Vector2(2721, 511.455)
+
+[node name="Polygon2D" type="Polygon2D" parent="PuzzleInterface/Frame"]
+color = Color(0.14902, 0.215686, 0.368627, 1)
+polygon = PackedVector2Array(-727, -346, 761, -349, 645, 450, -606, 450)
+
+[node name="Sprite2D" type="Sprite2D" parent="PuzzleInterface/Frame"]
+z_index = 12
+texture = ExtResource("2_7gqnj")
+
+[node name="back_grund_blur" type="ColorRect" parent="PuzzleInterface"]
+material = SubResource("ShaderMaterial_tv5vo")
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PuzzleInterface"]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_qbmxh")
+}
 
 [node name="MainInterface" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -55,23 +183,26 @@ centered = false
 script = ExtResource("2_rof6h")
 
 [node name="PuzzleAccess1" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_e027i")
+material = SubResource("ShaderMaterial_vt1uv")
 puzzle_path = "res://scenes/puzzle1.tscn"
+title = "Spices"
 
 [node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_7wl4a")
+material = SubResource("ShaderMaterial_dr4up")
 position = Vector2(986, 684)
 puzzle_path = "res://scenes/puzzle2.tscn"
+title = "main"
 
 [node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_dsbfb")
+material = SubResource("ShaderMaterial_cdux7")
 position = Vector2(466, 684)
 puzzle_path = "res://scenes/puzzle3.tscn"
+title = "Ingridience"
 
 [node name="TimerInterface" type="Node2D" parent="MainInterface"]
 
 [node name="TimerSprite" type="Sprite2D" parent="MainInterface/TimerInterface"]
-position = Vector2(1299, 135)
+position = Vector2(1299, 122)
 texture = ExtResource("2_rhubm")
 
 [node name="MoneyInterface" type="Node2D" parent="MainInterface"]
@@ -80,11 +211,21 @@ texture = ExtResource("2_rhubm")
 position = Vector2(549, 383)
 texture = ExtResource("3_4wres")
 
+[node name="Money" type="Label" parent="MainInterface/MoneyInterface"]
+offset_left = 444.0
+offset_top = 181.0
+offset_right = 613.0
+offset_bottom = 256.0
+text = "100$"
+label_settings = SubResource("LabelSettings_6nvvk")
+horizontal_alignment = 1
+
 [node name="GalaxyBackround" type="Node2D" parent="MainInterface"]
 
 [node name="Customer" type="Node2D" parent="MainInterface"]
 
 [node name="CustomerSprite" type="Sprite2D" parent="MainInterface/Customer"]
+visible = false
 position = Vector2(950, 409)
 texture = ExtResource("4_yx08n")
 
