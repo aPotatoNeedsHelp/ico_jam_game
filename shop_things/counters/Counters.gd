@@ -17,7 +17,6 @@ func _ready():
 	
 	puzzle_acces_liste[0].change_shader_color(WHITENING_AMOUNT)
 
-
 func _unhandled_input(event):
 	if event.is_action_pressed("right"):
 		change_selected_puzzle(-1)
