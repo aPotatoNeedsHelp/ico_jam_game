@@ -1,11 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://gge8fpogkpxq"]
+[gd_scene load_steps=6 format=3 uid="uid://gge8fpogkpxq"]
 
 [ext_resource type="Texture2D" uid="uid://d34pnxki3r5gl" path="res://shop_things/counters/placeholder.png" id="1_ptfqs"]
 [ext_resource type="Theme" uid="uid://byllmko217xk7" path="res://_debug_things/debug_theme.tres" id="2_8d23l"]
+[ext_resource type="Script" path="res://shop_things/counters/puzzle_access.gd" id="2_8h8vq"]
+
+[sub_resource type="Shader" id="Shader_wgrjo"]
+code = "shader_type canvas_item;
+
+uniform float whitening = 0.0;
+
+void fragment() {
+    vec4 texture_color = texture(TEXTURE, UV);
+    COLOR = vec4(mix(texture_color.rgb, vec3(0.5,1,1), whitening), texture_color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ncwcx"]
+resource_local_to_scene = true
+shader = SubResource("Shader_wgrjo")
+shader_parameter/whitening = 0.0
 
 [node name="PuzzleAccess" type="Sprite2D"]
+material = SubResource("ShaderMaterial_ncwcx")
 position = Vector2(1536, 684)
 texture = ExtResource("1_ptfqs")
+script = ExtResource("2_8h8vq")
 
 [node name="PuzzleType" type="RichTextLabel" parent="."]
 offset_left = -109.0

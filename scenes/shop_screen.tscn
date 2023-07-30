@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqdrvpn2k8nsi"]
+[gd_scene load_steps=12 format=3 uid="uid://cqdrvpn2k8nsi"]
 
 [ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://Assats/main_shop.png" id="1_4o1bu"]
 [ext_resource type="PackedScene" uid="uid://cd3gb4vmfaidk" path="res://_debug_things/debug_layer.tscn" id="1_bou51"]
@@ -8,8 +8,35 @@
 [ext_resource type="Texture2D" uid="uid://ljyrkq11rkxo" path="res://shop_things/cash_register/cash_register_sprite.png" id="3_4wres"]
 [ext_resource type="Texture2D" uid="uid://bcgqblco48nag" path="res://shop_things/customers/regular_guy.png" id="4_yx08n"]
 
+[sub_resource type="Shader" id="Shader_wgrjo"]
+code = "shader_type canvas_item;
+
+uniform float whitening = 0.0;
+
+void fragment() {
+    vec4 texture_color = texture(TEXTURE, UV);
+    COLOR = vec4(mix(texture_color.rgb, vec3(0.5,1,1), whitening), texture_color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ilemr"]
+resource_local_to_scene = true
+shader = SubResource("Shader_wgrjo")
+shader_parameter/whitening = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ack17"]
+resource_local_to_scene = true
+shader = SubResource("Shader_wgrjo")
+shader_parameter/whitening = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pmdn"]
+resource_local_to_scene = true
+shader = SubResource("Shader_wgrjo")
+shader_parameter/whitening = 0.0
+
 [node name="ShopScreen" type="Node2D"]
 metadata/_edit_lock_ = true
+
+[node name="PuzzleInterface" type="Node2D" parent="."]
 
 [node name="MainInterface" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -24,34 +51,37 @@ metadata/_edit_lock_ = true
 texture = ExtResource("1_4o1bu")
 centered = false
 
-[node name="Counters" type="Node2D" parent="."]
+[node name="Counters" type="Node2D" parent="MainInterface"]
 script = ExtResource("2_rof6h")
 
-[node name="PuzzleAccess" parent="Counters" instance=ExtResource("2_qydmv")]
+[node name="PuzzleAccess" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
+material = SubResource("ShaderMaterial_ilemr")
 
-[node name="PuzzleAccess2" parent="Counters" instance=ExtResource("2_qydmv")]
-position = Vector2(466, 684)
-
-[node name="PuzzleAccess3" parent="Counters" instance=ExtResource("2_qydmv")]
+[node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
+material = SubResource("ShaderMaterial_ack17")
 position = Vector2(986, 684)
 
-[node name="TimerInterface" type="Node2D" parent="."]
+[node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
+material = SubResource("ShaderMaterial_8pmdn")
+position = Vector2(466, 684)
 
-[node name="TimerSprite" type="Sprite2D" parent="TimerInterface"]
+[node name="TimerInterface" type="Node2D" parent="MainInterface"]
+
+[node name="TimerSprite" type="Sprite2D" parent="MainInterface/TimerInterface"]
 position = Vector2(1299, 135)
 texture = ExtResource("2_rhubm")
 
-[node name="MoneyInterface" type="Node2D" parent="."]
+[node name="MoneyInterface" type="Node2D" parent="MainInterface"]
 
-[node name="CashRegisterSprite" type="Sprite2D" parent="MoneyInterface"]
+[node name="CashRegisterSprite" type="Sprite2D" parent="MainInterface/MoneyInterface"]
 position = Vector2(549, 383)
 texture = ExtResource("3_4wres")
 
-[node name="GalaxyBackround" type="Node2D" parent="."]
+[node name="GalaxyBackround" type="Node2D" parent="MainInterface"]
 
-[node name="Customer" type="Node2D" parent="."]
+[node name="Customer" type="Node2D" parent="MainInterface"]
 
-[node name="CustomerSprite" type="Sprite2D" parent="Customer"]
+[node name="CustomerSprite" type="Sprite2D" parent="MainInterface/Customer"]
 position = Vector2(950, 409)
 texture = ExtResource("4_yx08n")
 
