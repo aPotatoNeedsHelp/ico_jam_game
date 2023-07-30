@@ -1,5 +1,7 @@
-extends GridBody2D
+extends CharacterBody2D
 
+#nothing
+var speed: float = 128*2
 var directions = {
 		"right": Vector2.RIGHT,
 		"left": Vector2.LEFT,
@@ -7,10 +9,7 @@ var directions = {
 		"down": Vector2.DOWN
 }
 
-func _input(event: InputEvent) -> void:
-	for dir in directions.keys():
-		if event.is_action_pressed(str("ui_", dir)):
-			move(directions[dir])
-			$Player.rotation = get_rotation_to(directions[dir])
-			get_parent().step()
-			
+func _physics_process(delta: float) -> void:
+	var dir = Input.get_vector("left", "right", "up", "down")
+	velocity = dir * speed
+	move_and_slide()
