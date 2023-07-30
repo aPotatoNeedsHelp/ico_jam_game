@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://bu5kal2dije2a"]
+[gd_scene load_steps=5 format=3 uid="uid://darned647ss5d"]
+
+[ext_resource type="Texture2D" uid="uid://c2p6j8axgwb5i" path="res://assats/Bread_top.png" id="1_4f0of"]
+[ext_resource type="Texture2D" uid="uid://ccawww4ltp2mf" path="res://assats/Bread_bottom.png" id="2_axv3c"]
+[ext_resource type="Script" path="res://scripts/drag_texture.gd" id="2_p7e3k"]
+[ext_resource type="Texture2D" uid="uid://v56im8nkasip" path="res://assats/Meat_raw.png" id="4_vwsf6"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -7,3 +12,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 581.0
+offset_right = 1132.0
+offset_bottom = 709.0
+texture = ExtResource("1_4f0of")
+script = ExtResource("2_p7e3k")
+smooth_weight = 0.3
+
+[node name="drag_texture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1001.0
+offset_top = 364.0
+offset_right = 1041.0
+offset_bottom = 404.0
+texture = ExtResource("2_axv3c")
+script = ExtResource("2_p7e3k")
+
+[node name="drag_texture2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1001.0
+offset_top = 364.0
+offset_right = 1041.0
+offset_bottom = 404.0
+texture = ExtResource("4_vwsf6")
+script = ExtResource("2_p7e3k")

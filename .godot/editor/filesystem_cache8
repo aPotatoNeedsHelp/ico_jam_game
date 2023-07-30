@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690714727
+::res://::1690719631
 this is a mess.txt::TextFile::-1::1690714727::0::1::::<><>::
 ::res://#garbage/::1690667505
 ::res://assats/::1690714752
@@ -10,8 +10,7 @@ Meat_cooced.png::CompressedTexture2D::4710272093469051540::1690714727::169071475
 Meat_raw.png::CompressedTexture2D::1537794244010265319::1690714727::1690714751::1::::<><>::
 player.png::CompressedTexture2D::6427520185894298529::1690714727::1690714751::1::::<><>::
 tilesese.png::CompressedTexture2D::8389297594144983547::1690714727::1690714751::1::::<><>::
-::res://main_scenes/::1690714851
-main.tscn::PackedScene::3852736678617133710::1690714905::0::1::::<><>::
-::res://scripts/::1690714812
-GridBody2D.gd::GDScript::-1::1690714727::0::1::::GridBody2D<>CharacterBody2D<>::
-main.gd::GDScript::-1::1690714812::0::1::::<>Node2D<>::
+::res://scenes/::1690720086
+main.tscn::PackedScene::3852736678617133710::1690720176::0::1::::<><>::uid://c2p6j8axgwb5i::::res://assats/Bread_top.png<>res://scripts/bread_top.gd
+::res://scripts/::1690720086
+bread_top.gd::GDScript::-1::1690720120::0::1::::drag_texture<>TextureRect<>::
