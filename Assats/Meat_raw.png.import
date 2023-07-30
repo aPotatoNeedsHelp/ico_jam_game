@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://v56im8nkasip"
-path="res://.godot/imported/Meat_raw.png-04f96b961bfb4f2e38e49843a9517bda.ctex"
+path="res://.godot/imported/Meat_raw.png-cf31e7bdf4d658a15196893abab666c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assats/Meat_raw.png"
-dest_files=["res://.godot/imported/Meat_raw.png-04f96b961bfb4f2e38e49843a9517bda.ctex"]
+source_file="res://assats/Meat_raw.png"
+dest_files=["res://.godot/imported/Meat_raw.png-cf31e7bdf4d658a15196893abab666c0.ctex"]
 
 [params]
 

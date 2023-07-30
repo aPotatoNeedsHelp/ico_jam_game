@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8dxq1e0aj5bs"
-path="res://.godot/imported/Meat_cooced.png-06847fed3b2232a0fe07d6170719384d.ctex"
+path="res://.godot/imported/Meat_cooced.png-8068e52fc7a37298e482c6f0f5bba804.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assats/Meat_cooced.png"
-dest_files=["res://.godot/imported/Meat_cooced.png-06847fed3b2232a0fe07d6170719384d.ctex"]
+source_file="res://assats/Meat_cooced.png"
+dest_files=["res://.godot/imported/Meat_cooced.png-8068e52fc7a37298e482c6f0f5bba804.ctex"]
 
 [params]
 

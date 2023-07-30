@@ -11,8 +11,21 @@ config_version=5
 [application]
 
 config/name="Ico game jam"
+config/tags=PackedStringArray("current_working")
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://icon.svg"
+config/windows_native_icon="res://icon/fire_icon.ico"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
+
+[display]
+
+window/size/viewport_width=2048
+window/size/viewport_height=1280
+window/stretch/mode="canvas_items"
 
 [rendering]
 
