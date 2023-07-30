@@ -6,7 +6,7 @@ class_name Food
 func _init() -> void:
 	add_to_group("Push", true)
 	gravity_scale = 0
-	linear_damp = 100
+	linear_damp = 10
 	lock_rotation = true
 
 

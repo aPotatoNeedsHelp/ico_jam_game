@@ -2,7 +2,7 @@ extends RigidBody2D
 
 const DELTA_MULTIPLIER = 40
 var velocity: Vector2
-@export_range(0.0,128*2)var speed: float = 128*0.25
+@export_range(0.0,128*2)var speed: float = 128
 var directions = {
 		"right": Vector2.RIGHT,
 		"left": Vector2.LEFT,
@@ -16,4 +16,4 @@ func _physics_process(delta: float) -> void:
 		dir.y = 0
 	velocity = dir.normalized() * speed  * delta * DELTA_MULTIPLIER
 	
-	position += velocity
+	apply_central_impulse(dir * speed)
