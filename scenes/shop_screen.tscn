@@ -111,17 +111,17 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(0.5,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vt1uv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7d2u"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dr4up"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clm4f"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cdux7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ixrb8"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
@@ -138,17 +138,6 @@ metadata/_edit_lock_ = true
 z_index = 10
 script = ExtResource("1_wvdm2")
 
-[node name="Frame" type="Node2D" parent="PuzzleInterface"]
-position = Vector2(2721, 511.455)
-
-[node name="Polygon2D" type="Polygon2D" parent="PuzzleInterface/Frame"]
-color = Color(0.14902, 0.215686, 0.368627, 1)
-polygon = PackedVector2Array(-727, -346, 761, -349, 645, 450, -606, 450)
-
-[node name="Sprite2D" type="Sprite2D" parent="PuzzleInterface/Frame"]
-z_index = 12
-texture = ExtResource("2_7gqnj")
-
 [node name="back_grund_blur" type="ColorRect" parent="PuzzleInterface"]
 material = SubResource("ShaderMaterial_tv5vo")
 custom_minimum_size = Vector2(1920, 1080)
@@ -159,6 +148,17 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Frame" type="Node2D" parent="PuzzleInterface"]
+position = Vector2(2721, 511.455)
+
+[node name="Polygon2D" type="Polygon2D" parent="PuzzleInterface/Frame"]
+color = Color(0.14902, 0.215686, 0.368627, 1)
+polygon = PackedVector2Array(-727, -346, 761, -349, 645, 450, -606, 450)
+
+[node name="Sprite2D" type="Sprite2D" parent="PuzzleInterface/Frame"]
+z_index = 12
+texture = ExtResource("2_7gqnj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PuzzleInterface"]
 autoplay = "RESET"
@@ -183,18 +183,18 @@ centered = false
 script = ExtResource("2_rof6h")
 
 [node name="PuzzleAccess1" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_vt1uv")
+material = SubResource("ShaderMaterial_n7d2u")
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Spices"
 
 [node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_dr4up")
+material = SubResource("ShaderMaterial_clm4f")
 position = Vector2(986, 684)
 puzzle_path = "res://scenes/puzzle2.tscn"
 title = "main"
 
 [node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_cdux7")
+material = SubResource("ShaderMaterial_ixrb8")
 position = Vector2(466, 684)
 puzzle_path = "res://scenes/puzzle3.tscn"
 title = "Ingridience"

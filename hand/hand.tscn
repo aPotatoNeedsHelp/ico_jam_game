@@ -3,10 +3,9 @@
 [ext_resource type="Script" path="res://hand/hand.gd" id="1_dulgx"]
 [ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://hand/player.png" id="2_6ouq7"]
 
-[node name="hand" type="CharacterBody2D" node_paths=PackedStringArray("sprite") groups=["Push"]]
+[node name="hand" type="CharacterBody2D" groups=["Push"]]
 collision_layer = 2
 script = ExtResource("1_dulgx")
-sprite = NodePath("Player")
 
 [node name="Player" type="Sprite2D" parent="."]
 texture = ExtResource("2_6ouq7")
