@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#nothing
 var speed: float = 128*2
 var directions = {
 		"right": Vector2.RIGHT,
