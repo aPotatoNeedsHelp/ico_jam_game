@@ -30,6 +30,7 @@ func _unhandled_input(event):
 		var path = puzzle_acces_liste[selected_puzzle].puzzle_path
 		puzzle_selected.emit(path)
 		print("emited path: ", path)
+		get_tree().change_scene_to_file(path)
 
 func change_selected_puzzle(amount):
 	selected_puzzle += amount
