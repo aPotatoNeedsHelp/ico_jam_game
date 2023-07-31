@@ -115,6 +115,25 @@ _data = {
 "fade_in": SubResource("Animation_7706q")
 }
 
+[sub_resource type="GDScript" id="GDScript_bo2mi"]
+script/source = "extends Node2D
+
+@onready var customer_sprite: Sprite2D = $CustomerSprite
+
+var tween: Tween
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed(\"left\"):
+		tween = create_tween()
+		tween.tween_property(customer_sprite, \"position\", Vector2(950, 424), 1).set_trans(Tween.TRANS_CUBIC)
+		tween.parallel().tween_property(customer_sprite, \"modulate\", Color.WHITE, 1.5).set_ease(Tween.EASE_IN)
+	pass
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_6nvvk"]
+font = ExtResource("6_qe061")
+font_size = 36
+font_color = Color(0.215686, 0.227451, 0.266667, 1)
+
 [sub_resource type="Shader" id="Shader_wgrjo"]
 code = "shader_type canvas_item;
 
@@ -139,25 +158,6 @@ shader_parameter/whitening = 0.0
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_6nvvk"]
-font = ExtResource("6_qe061")
-font_size = 36
-font_color = Color(0.215686, 0.227451, 0.266667, 1)
-
-[sub_resource type="GDScript" id="GDScript_bo2mi"]
-script/source = "extends Node2D
-
-@onready var customer_sprite: Sprite2D = $CustomerSprite
-
-var tween: Tween
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed(\"left\"):
-		tween = create_tween()
-		tween.tween_property(customer_sprite, \"position\", Vector2(950, 424), 1).set_trans(Tween.TRANS_CUBIC)
-		tween.parallel().tween_property(customer_sprite, \"modulate\", Color.WHITE, 1.5).set_ease(Tween.EASE_IN)
-	pass
-"
 
 [node name="ShopScreen" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -203,29 +203,19 @@ offset_bottom = 1080.0
 color = Color(0.466667, 0.54902, 0.6, 1)
 metadata/_edit_lock_ = true
 
-[node name="MainShop" type="Sprite2D" parent="MainInterface"]
-texture = ExtResource("1_4o1bu")
-centered = false
+[node name="Customer" type="Node2D" parent="MainInterface"]
+script = SubResource("GDScript_bo2mi")
 
-[node name="Counters" type="Node2D" parent="MainInterface"]
-script = ExtResource("2_rof6h")
+[node name="CustomerSprite" type="Sprite2D" parent="MainInterface/Customer"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(950, 729)
+texture = ExtResource("4_yx08n")
 
-[node name="PuzzleAccess1" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_8x2a3")
-puzzle_path = "res://scenes/puzzle1.tscn"
-title = "Spices"
-
-[node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_3oywr")
-position = Vector2(986, 684)
-puzzle_path = "res://scenes/puzzle1.tscn"
-title = "main"
-
-[node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_g81ac")
-position = Vector2(466, 684)
-puzzle_path = "res://scenes/puzzle1.tscn"
-title = "Ingridience"
+[node name="ColorRect" type="ColorRect" parent="MainInterface/Customer"]
+offset_top = 520.0
+offset_right = 2023.0
+offset_bottom = 1238.0
+color = Color(0.464844, 0.546875, 0.597656, 1)
 
 [node name="TimerInterface" type="Node2D" parent="MainInterface"]
 
@@ -248,14 +238,31 @@ text = "100$"
 label_settings = SubResource("LabelSettings_6nvvk")
 horizontal_alignment = 1
 
+[node name="Counters" type="Node2D" parent="MainInterface"]
+script = ExtResource("2_rof6h")
+
+[node name="PuzzleAccess1" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
+material = SubResource("ShaderMaterial_8x2a3")
+puzzle_path = "res://scenes/puzzle1.tscn"
+title = "Spices"
+
+[node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
+material = SubResource("ShaderMaterial_3oywr")
+position = Vector2(986, 684)
+puzzle_path = "res://scenes/puzzle1.tscn"
+title = "main"
+
+[node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
+material = SubResource("ShaderMaterial_g81ac")
+position = Vector2(466, 684)
+puzzle_path = "res://scenes/puzzle1.tscn"
+title = "Ingridience"
+
+[node name="MainShop" type="Sprite2D" parent="MainInterface"]
+texture = ExtResource("1_4o1bu")
+centered = false
+
 [node name="GalaxyBackround" type="Node2D" parent="MainInterface"]
-
-[node name="Customer" type="Node2D" parent="MainInterface"]
-script = SubResource("GDScript_bo2mi")
-
-[node name="CustomerSprite" type="Sprite2D" parent="MainInterface/Customer"]
-position = Vector2(950, 409)
-texture = ExtResource("4_yx08n")
 
 [node name="DebugLayer" parent="." instance=ExtResource("1_bou51")]
 
