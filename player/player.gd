@@ -26,7 +26,8 @@ func _physics_process(delta: float) -> void:
 		dir.y = 0
 	
 	velocity = dir.normalized() * speed  * delta * DELTA_MULTIPLIER
-	
+	if velocity != Vector2.ZERO:
+		rotation = velocity.angle() + PI/2
 	move_and_slide()
 
 func _unhandled_input(event):
