@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwq8iue83rlcq"]
 
 [ext_resource type="Script" path="res://puzzle/movable_objects/dragable_object.gd" id="1_rvs4q"]
-[ext_resource type="Texture2D" uid="uid://c2p6j8axgwb5i" path="res://bread_top/Bread_top.png" id="1_sbanx"]
+[ext_resource type="Texture2D" uid="uid://c2p6j8axgwb5i" path="res://bread/Bread_top.png" id="1_sbanx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwht5"]
 size = Vector2(126, 72)

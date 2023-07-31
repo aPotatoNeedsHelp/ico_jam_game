@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdy2eldle6nss"]
+[gd_scene load_steps=11 format=3 uid="uid://cdy2eldle6nss"]
 
 [ext_resource type="Texture2D" uid="uid://drr3rgtnselff" path="res://assats/tilesese.png" id="1_4arrq"]
 [ext_resource type="Script" path="res://scripts/level_map.gd" id="2_fwl3k"]
@@ -6,14 +6,18 @@
 [ext_resource type="PackedScene" uid="uid://dwq8iue83rlcq" path="res://puzzle/movable_objects/dragable_object.tscn" id="4_smq5w"]
 [ext_resource type="PackedScene" uid="uid://clw07x86mswh7" path="res://fire/fire.tscn" id="5_jomh3"]
 [ext_resource type="PackedScene" uid="uid://btpmcqws0pu1" path="res://flipper/flipper.tscn" id="6_p5whh"]
+[ext_resource type="PackedScene" uid="uid://dphk0pxpr3nyq" path="res://plate/plate.tscn" id="7_ysboj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hybyf"]
+size = Vector2(1694, 168)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqdqi"]
 texture = ExtResource("1_4arrq")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
-0:0/0/custom_data_0 = "bread_bottom"
+0:0/0/custom_data_0 = "bread"
 1:0/0 = 0
-1:0/0/custom_data_0 = "bread_top"
+1:0/0/custom_data_0 = "bread"
 2:0/0 = 0
 2:0/0/custom_data_0 = "fire"
 3:0/0 = 0
@@ -32,10 +36,27 @@ custom_data_layer_1/type = 0
 sources/0 = SubResource("TileSetAtlasSource_qqdqi")
 tile_proxies/coords_level = [[0, Vector2i(0, 0)], [2, Vector2i(0, 0)], [0, Vector2i(1, 0)], [2, Vector2i(1, 0)], [0, Vector2i(2, 0)], [2, Vector2i(2, 0)], [0, Vector2i(3, 0)], [2, Vector2i(3, 0)], [0, Vector2i(4, 0)], [2, Vector2i(4, 0)], [1, Vector2i(0, 0)], [2, Vector2i(5, 0)]]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hybyf"]
-size = Vector2(1694, 168)
-
 [node name="puzzle" type="Node2D"]
+
+[node name="Borders" type="StaticBody2D" parent="."]
+position = Vector2(0, -402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders"]
+shape = SubResource("RectangleShape2D_hybyf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders"]
+position = Vector2(0, 914)
+shape = SubResource("RectangleShape2D_hybyf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
+position = Vector2(707, 413)
+polygon = PackedVector2Array(23, -332, -72.9999, 420, 144, 420, 144, -332)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Borders"]
+position = Vector2(-707, 413)
+rotation = 3.14159
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(23, -332, -72.9999, 420, 144, 420, 144, -332)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_6b1t4")
@@ -54,31 +75,6 @@ script = ExtResource("2_fwl3k")
 visible = false
 texture = ExtResource("3_4fql4")
 
-[node name="BordersUp" type="StaticBody2D" parent="."]
-position = Vector2(0, -402)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BordersUp"]
-shape = SubResource("RectangleShape2D_hybyf")
-
-[node name="BordersDown" type="StaticBody2D" parent="."]
-position = Vector2(0, 512)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BordersDown"]
-shape = SubResource("RectangleShape2D_hybyf")
-
-[node name="BorderRight" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BorderRight"]
-position = Vector2(707, 11)
-polygon = PackedVector2Array(23, -332, -72.9999, 420, 144, 420, 144, -332)
-
-[node name="BorderLeft" type="StaticBody2D" parent="."]
-scale = Vector2(-1, 1)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BorderLeft"]
-position = Vector2(707, 11)
-polygon = PackedVector2Array(23, -332, -72.9999, 420, 144, 420, 144, -332)
-
 [node name="DragableObject" parent="." instance=ExtResource("4_smq5w")]
 position = Vector2(0, 322)
 collision_mask = 7
@@ -86,13 +82,12 @@ collision_mask = 7
 [node name="DragableObject2" parent="." instance=ExtResource("4_smq5w")]
 position = Vector2(8, 0)
 
-[node name="Plate" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate"]
-
 [node name="fire" parent="." instance=ExtResource("5_jomh3")]
 position = Vector2(-339, 168)
 collision_mask = 4
 
 [node name="flipper" parent="." instance=ExtResource("6_p5whh")]
 position = Vector2(480, 241)
+
+[node name="Pllate" parent="." instance=ExtResource("7_ysboj")]
+position = Vector2(-381, -107)

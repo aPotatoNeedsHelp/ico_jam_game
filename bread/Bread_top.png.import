@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccawww4ltp2mf"
-path="res://.godot/imported/Bread_bottom.png-747787dcd5bf30290c95020805bf2389.ctex"
+uid="uid://c2p6j8axgwb5i"
+path="res://.godot/imported/Bread_top.png-e361040ae7d82fe413ff06d2f810db1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bread_bottom/Bread_bottom.png"
-dest_files=["res://.godot/imported/Bread_bottom.png-747787dcd5bf30290c95020805bf2389.ctex"]
+source_file="res://bread/Bread_top.png"
+dest_files=["res://.godot/imported/Bread_top.png-e361040ae7d82fe413ff06d2f810db1b.ctex"]
 
 [params]
 

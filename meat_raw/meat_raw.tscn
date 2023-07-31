@@ -9,6 +9,7 @@ size = Vector2(117, 26)
 [node name="food" type="RigidBody2D"]
 collision_mask = 3
 script = ExtResource("1_bu1oy")
+title = "meat_raw"
 burned_food_path = "res://meat_grilled/meat_grilled.tscn"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

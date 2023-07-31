@@ -144,17 +144,17 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(0.5,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8x2a3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vjbb6"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3oywr"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kskuy"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g81ac"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bfum5"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
@@ -242,18 +242,18 @@ horizontal_alignment = 1
 script = ExtResource("2_rof6h")
 
 [node name="PuzzleAccess1" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_8x2a3")
+material = SubResource("ShaderMaterial_vjbb6")
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Spices"
 
 [node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_3oywr")
+material = SubResource("ShaderMaterial_kskuy")
 position = Vector2(986, 684)
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "main"
 
 [node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_g81ac")
+material = SubResource("ShaderMaterial_bfum5")
 position = Vector2(466, 684)
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Ingridience"

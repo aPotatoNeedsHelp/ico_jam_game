@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c577s8j817ng3"]
+
+[ext_resource type="Texture2D" uid="uid://c2p6j8axgwb5i" path="res://bread/Bread_top.png" id="1_lu75h"]
+[ext_resource type="Texture2D" uid="uid://b8dxq1e0aj5bs" path="res://meat_grilled/Meat_cooced.png" id="2_s7nlu"]
+
+[node name="meat_bread" type="Node2D"]
+
+[node name="BreadTop" type="Sprite2D" parent="."]
+position = Vector2(-1, -44)
+texture = ExtResource("1_lu75h")
+
+[node name="MeatCooced" type="Sprite2D" parent="."]
+position = Vector2(1, -5)
+texture = ExtResource("2_s7nlu")

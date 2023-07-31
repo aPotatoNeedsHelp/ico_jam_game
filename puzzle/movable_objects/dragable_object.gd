@@ -2,6 +2,7 @@ extends RigidBody2D
 
 const PLAYER_LAYER = 2
 
+@export var title: String = "untitled"
 @export_file() var burned_food_path
 
 @export_range(0,20) var follow_speed = 5

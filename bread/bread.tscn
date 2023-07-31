@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhudf7y3a6erv"]
 
-[ext_resource type="Script" path="res://puzzle/movable_objects/dragable_object.gd" id="1_s2y8s"]
-[ext_resource type="Texture2D" uid="uid://c2p6j8axgwb5i" path="res://bread_top/Bread_top.png" id="2_gqiku"]
+[ext_resource type="Script" path="res://puzzle/movable_objects/dragable_object.gd" id="1_ddabe"]
+[ext_resource type="Texture2D" uid="uid://c2p6j8axgwb5i" path="res://bread/Bread_top.png" id="2_1mifx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0dd6y"]
 size = Vector2(120, 59)
 
 [node name="food" type="RigidBody2D"]
 collision_mask = 3
-script = ExtResource("1_s2y8s")
+script = ExtResource("1_ddabe")
+title = "bread"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_gqiku")
+texture = ExtResource("2_1mifx")
 offset = Vector2(0, -27)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
