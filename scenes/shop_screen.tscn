@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://cqdrvpn2k8nsi"]
+[gd_scene load_steps=22 format=3 uid="uid://cqdrvpn2k8nsi"]
 
-[ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://Assats/main_shop.png" id="1_4o1bu"]
+[ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://assats/main_shop.png" id="1_4o1bu"]
 [ext_resource type="PackedScene" uid="uid://cd3gb4vmfaidk" path="res://_debug_things/debug_layer.tscn" id="1_bou51"]
 [ext_resource type="Script" path="res://scenes/PuzzleInterface.gd" id="1_wvdm2"]
 [ext_resource type="Shader" path="res://scenes/bg_blur_screen.gdshader" id="1_x3bgt"]
@@ -125,17 +125,17 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(0.5,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pg0q"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8x2a3"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6u8pv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3oywr"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrao0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g81ac"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
@@ -144,6 +144,20 @@ shader_parameter/whitening = 0.0
 font = ExtResource("6_qe061")
 font_size = 36
 font_color = Color(0.215686, 0.227451, 0.266667, 1)
+
+[sub_resource type="GDScript" id="GDScript_bo2mi"]
+script/source = "extends Node2D
+
+@onready var customer_sprite: Sprite2D = $CustomerSprite
+
+var tween: Tween
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"left\"):
+		tween = create_tween()
+		tween.tween_property(customer_sprite, \"position\", Vector2(950, 424), 1).set_trans(Tween.TRANS_CUBIC)
+		tween.parallel().tween_property(customer_sprite, \"modulate\", Color.WHITE, 1.5).set_ease(Tween.EASE_IN)
+	pass
+"
 
 [node name="ShopScreen" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -197,18 +211,18 @@ centered = false
 script = ExtResource("2_rof6h")
 
 [node name="PuzzleAccess1" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_6pg0q")
+material = SubResource("ShaderMaterial_8x2a3")
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Spices"
 
 [node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_6u8pv")
+material = SubResource("ShaderMaterial_3oywr")
 position = Vector2(986, 684)
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "main"
 
 [node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_rrao0")
+material = SubResource("ShaderMaterial_g81ac")
 position = Vector2(466, 684)
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Ingridience"
@@ -237,9 +251,9 @@ horizontal_alignment = 1
 [node name="GalaxyBackround" type="Node2D" parent="MainInterface"]
 
 [node name="Customer" type="Node2D" parent="MainInterface"]
+script = SubResource("GDScript_bo2mi")
 
 [node name="CustomerSprite" type="Sprite2D" parent="MainInterface/Customer"]
-visible = false
 position = Vector2(950, 409)
 texture = ExtResource("4_yx08n")
 

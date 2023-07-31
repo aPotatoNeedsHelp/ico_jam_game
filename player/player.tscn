@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://3yl4fno5m7bk"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_e3ici"]
-[ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://player/player.png" id="2_6p065"]
+[ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://hand/hand.png" id="2_6p065"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gse1v"]
 size = Vector2(104, 107)
@@ -14,7 +14,6 @@ height = 264.0
 collision_layer = 2
 script = ExtResource("1_e3ici")
 speed = 835.797
-rotation_lerp = 0.3
 
 [node name="Player" type="Sprite2D" parent="."]
 texture = ExtResource("2_6p065")
