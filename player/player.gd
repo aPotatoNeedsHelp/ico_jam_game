@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 const DELTA_MULTIPLIER = 40
 
+@export var lock_diagonals: bool = false
 @export_range(0.0,128*10)var speed: float = 128
+
 
 @onready var grab_area = $GrabArea
 @onready var follow_position = $FollowPosition
@@ -10,7 +12,6 @@ const DELTA_MULTIPLIER = 40
 var current_object = null
 var is_object_inrange:bool = false
 var is_object_picked_up:bool = false
-
 var directions = {
 		"right": Vector2.RIGHT,
 		"left": Vector2.LEFT,
@@ -20,7 +21,8 @@ var directions = {
 
 func _physics_process(delta: float) -> void:
 	var dir = Input.get_vector("left", "right", "up", "down")
-	if dir.x != 0 and dir.y != 0:
+	
+	if dir.x != 0 and dir.y != 0 and lock_diagonals:
 		dir.y = 0
 	
 	velocity = dir.normalized() * speed  * delta * DELTA_MULTIPLIER

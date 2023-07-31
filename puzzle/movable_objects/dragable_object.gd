@@ -12,6 +12,11 @@ var is_picked_up:bool = false
 var inside_tileset:bool = false
 var player = null
 
+func _ready() -> void:
+	collision_layer = 4
+	collision_mask = 5
+	lock_rotation = true
+	gravity_scale = 0
 
 func player_interaction(itself,picked_up):
 ##	Makes sure that we don't throw the object when it's inside collisions
@@ -19,7 +24,7 @@ func player_interaction(itself,picked_up):
 #		itself.is_object_picked_up = true
 #		return
 	
-	set_collision_mask_value(PLAYER_LAYER,is_picked_up)
+	#set_collision_mask_value(PLAYER_LAYER,is_picked_up)
 	is_picked_up = picked_up
 	player = itself
 

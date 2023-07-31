@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cm05cphx4hs2c"]
 
-[ext_resource type="Script" path="res://scripts/food.gd" id="1_cs5vc"]
+[ext_resource type="Script" path="res://puzzle/movable_objects/dragable_object.gd" id="1_yplp2"]
 [ext_resource type="Texture2D" uid="uid://b8dxq1e0aj5bs" path="res://meat_grilled/Meat_cooced.png" id="2_1sts2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2r6st"]
@@ -8,8 +8,7 @@ size = Vector2(117, 19)
 
 [node name="food" type="RigidBody2D"]
 collision_mask = 3
-script = ExtResource("1_cs5vc")
-burned_food_preload = "res://meat_grilled/meat_grilled.tscn"
+script = ExtResource("1_yplp2")
 
 [node name="BreadTop" type="Sprite2D" parent="."]
 texture = ExtResource("2_1sts2")

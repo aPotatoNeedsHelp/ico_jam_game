@@ -1,13 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://3yl4fno5m7bk"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_e3ici"]
-[ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://player/player.png" id="2_6p065"]
+[ext_resource type="Texture2D" uid="uid://cxtsk3b78ss8x" path="res://hand/hand.png" id="2_6p065"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gse1v"]
 size = Vector2(104, 107)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kp7s0"]
-radius = 82.2253
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fai6"]
+radius = 45.0
+height = 264.0
 
 [node name="player" type="CharacterBody2D" groups=["Push"]]
 collision_layer = 2
@@ -26,8 +27,8 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrabArea"]
-position = Vector2(0, -113)
-shape = SubResource("CircleShape2D_kp7s0")
+position = Vector2(0, -79)
+shape = SubResource("CapsuleShape2D_6fai6")
 
 [node name="FollowPosition" type="Marker2D" parent="."]
 position = Vector2(0, -150)
