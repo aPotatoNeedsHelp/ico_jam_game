@@ -1,4 +1,5 @@
-res://puzzle/movable_objects
+res://flipper
+res://hand
 res://scenes
 res://shaders
 res://shop_things/counters

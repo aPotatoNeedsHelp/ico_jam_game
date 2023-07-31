@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cdy2eldle6nss"]
+[gd_scene load_steps=10 format=3 uid="uid://cdy2eldle6nss"]
 
 [ext_resource type="Texture2D" uid="uid://drr3rgtnselff" path="res://assats/tilesese.png" id="1_4arrq"]
 [ext_resource type="Script" path="res://scripts/level_map.gd" id="2_fwl3k"]
 [ext_resource type="Texture2D" uid="uid://dhlx835r0cqsi" path="res://puzzle/frame.png" id="3_4fql4"]
 [ext_resource type="PackedScene" uid="uid://dwq8iue83rlcq" path="res://puzzle/movable_objects/dragable_object.tscn" id="4_smq5w"]
+[ext_resource type="PackedScene" uid="uid://clw07x86mswh7" path="res://fire/fire.tscn" id="5_jomh3"]
+[ext_resource type="PackedScene" uid="uid://btpmcqws0pu1" path="res://flipper/flipper.tscn" id="6_p5whh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqdqi"]
 texture = ExtResource("1_4arrq")
@@ -83,3 +85,14 @@ collision_mask = 7
 
 [node name="DragableObject2" parent="." instance=ExtResource("4_smq5w")]
 position = Vector2(8, 0)
+
+[node name="Plate" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plate"]
+
+[node name="fire" parent="." instance=ExtResource("5_jomh3")]
+position = Vector2(-339, 168)
+collision_mask = 4
+
+[node name="flipper" parent="." instance=ExtResource("6_p5whh")]
+position = Vector2(480, 241)

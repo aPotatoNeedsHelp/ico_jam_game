@@ -10,7 +10,7 @@ size = Vector2(117, 55)
 collision_mask = 3
 script = ExtResource("1_8f6tq")
 
-[node name="BreadTop" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_tw3vm")
 offset = Vector2(0, 27)
 
