@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://cqdrvpn2k8nsi"]
 
-[ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://assats/main_shop.png" id="1_4o1bu"]
+[ext_resource type="Texture2D" uid="uid://d3btncydf3csj" path="res://Assats/main_shop.png" id="1_4o1bu"]
 [ext_resource type="PackedScene" uid="uid://cd3gb4vmfaidk" path="res://_debug_things/debug_layer.tscn" id="1_bou51"]
 [ext_resource type="Script" path="res://scenes/PuzzleInterface.gd" id="1_wvdm2"]
 [ext_resource type="Shader" path="res://scenes/bg_blur_screen.gdshader" id="1_x3bgt"]
@@ -125,17 +125,17 @@ void fragment() {
     COLOR = vec4(mix(texture_color.rgb, vec3(0.5,1,1), whitening), texture_color.a);
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbfyi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6pg0q"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mptyc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6u8pv"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_esarv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrao0"]
 resource_local_to_scene = true
 shader = SubResource("Shader_wgrjo")
 shader_parameter/whitening = 0.0
@@ -197,18 +197,18 @@ centered = false
 script = ExtResource("2_rof6h")
 
 [node name="PuzzleAccess1" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_jbfyi")
+material = SubResource("ShaderMaterial_6pg0q")
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Spices"
 
 [node name="PuzzleAccess2" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_mptyc")
+material = SubResource("ShaderMaterial_6u8pv")
 position = Vector2(986, 684)
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "main"
 
 [node name="PuzzleAccess3" parent="MainInterface/Counters" instance=ExtResource("2_qydmv")]
-material = SubResource("ShaderMaterial_esarv")
+material = SubResource("ShaderMaterial_rrao0")
 position = Vector2(466, 684)
 puzzle_path = "res://scenes/puzzle1.tscn"
 title = "Ingridience"
@@ -244,3 +244,5 @@ position = Vector2(950, 409)
 texture = ExtResource("4_yx08n")
 
 [node name="DebugLayer" parent="." instance=ExtResource("1_bou51")]
+
+[connection signal="puzzle_selected" from="MainInterface/Counters" to="PuzzleInterface" method="_on_counters_puzzle_selected"]

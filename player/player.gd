@@ -33,10 +33,7 @@ func _unhandled_input(event):
 	update_current_object()
 	
 	if event.is_action_pressed("pick_up") and current_object != null:
-		if is_object_inrange:
-			is_object_picked_up = !is_object_picked_up
-		else:
-			is_object_picked_up = false
+		is_object_picked_up = !is_object_picked_up
 		
 		current_object.player_interaction(self,is_object_picked_up)
 		
