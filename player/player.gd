@@ -3,7 +3,8 @@ extends CharacterBody2D
 const DELTA_MULTIPLIER = 40
 
 @export var lock_diagonals: bool = false
-@export_range(0.0,128*10)var speed: float = 128
+@export_range(0.0,128*10) var speed: float = 128
+@export_range(0.0,1.0) var rotation_lerp = 0.5
 
 
 @onready var grab_area = $GrabArea
@@ -27,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 	velocity = dir.normalized() * speed  * delta * DELTA_MULTIPLIER
 	if velocity != Vector2.ZERO:
-		rotation = velocity.angle() + PI/2
+		rotation = lerp_angle(rotation,velocity.angle() + PI/2,rotation_lerp)
 	move_and_slide()
 
 func _unhandled_input(event):
